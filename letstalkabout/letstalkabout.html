@@ -1,0 +1,45 @@
+<head>
+    <title>Topic proposal</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8"/>
+</head>
+
+<body>
+<div class="container">
+    <h1>What we want to talk about?</h1>
+
+    {{> topicForm}}
+
+    {{> topicList}}
+</div>
+</body>
+
+
+<template name="topicForm">
+    <form class="topic-form">
+        <input type="text" placeholder="awesome topic man!"
+               class="form-control"/>
+        <button class="btn btn-primary">Add Topic</button>
+    </form>
+</template>
+
+
+<template name="topicList">
+    <div class="topic-list">
+        {{#each topics}}
+            {{> topic}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="topic">
+    <div class="topic row">
+        <div class="col-xs-2">{{likes}}</div>
+        <div class="col-xs-7">{{title}}</div>
+        <div class="col-xs-3">
+            <button class="btn btn-danger">+1</button>
+        </div>
+    </div>
+</template>
